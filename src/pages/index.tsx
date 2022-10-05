@@ -19,7 +19,7 @@ const Home: NextPage = () => {
             style={{ backgroundImage: `url(${bg.src})` }}
           ></div>
         </div>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-100 md:text-[5rem]">
+        <h1 className="text-5xl font-extrabold leading-normal z-10 text-gray-100 md:text-[5rem]">
           John Lecter.
         </h1>
       </main>
