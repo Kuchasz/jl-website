@@ -13,7 +13,7 @@ const Home: NextPage = () => {
 
       <main className="flex min-h-screen w-full items-center justify-center">
         <div className="absolute min-h-full w-full overflow-hidden">
-          <div className="absolute min-h-screen w-full bg-slate-500 opacity-40"></div>
+          <div className="absolute min-h-screen z-10 w-full bg-slate-500 opacity-40"></div>
           <div
             className="min-h-screen w-full animate-fly-in-out bg-cover bg-center"
             style={{ backgroundImage: `url(${bg.src})` }}
