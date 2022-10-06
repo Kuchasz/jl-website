@@ -13,7 +13,12 @@ const menuItems = [
 const Menu = () => (
   <div className="flex">
     {menuItems.map((mi) => (
-      <button className="drop-shadow-sm uppercase font-semibold text-xl my-4 mx-4 py-4 px-4 text-gray-100 transition-all hover:scale-105 hover:text-slate-800">{mi.name}</button>
+      <button
+        key={mi.name}
+        className="my-4 mx-4 py-4 px-4 text-xl font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-800"
+      >
+        {mi.name}
+      </button>
     ))}
   </div>
 );
@@ -40,6 +45,9 @@ const Home: NextPage = () => {
           John Lecter.
         </h1>
       </main>
+      <footer className="bg-slate-800 text-sm text-center text-slate-500 py-8">
+        {`© ${new Date().getFullYear()} John Lecter. All Rights Reserved`}
+      </footer>
     </>
   );
 };
