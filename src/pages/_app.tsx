@@ -12,12 +12,12 @@ const menuItems = [
 ];
 
 const Menu = () => (
-  <div className="flex">
+  <div className="flex flex-col md:flex-row">
     {menuItems.map((mi) => (
       <a
         key={mi.name}
         href={mi.link}
-        className="my-4 mx-4 cursor-pointer py-4 px-4 text-xl font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-800"
+        className="my-1 mx-1 md:my-4 md:mx-4 cursor-pointer self-center py-1 md:py-4 px-1 md:px-4 text-xl font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-800"
       >
         {mi.name}
       </a>
