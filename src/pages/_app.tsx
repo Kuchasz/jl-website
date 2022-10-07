@@ -13,7 +13,7 @@ const menuItems = [
 ];
 
 const Menu = () => (
-  <div className="flex flex-col w-full justify-center bg-gray-800 bg-opacity-90 md:flex-row">
+  <div className="flex flex-row flex-wrap w-full justify-center bg-gray-800 bg-opacity-90">
     {menuItems.map((mi) => (
       <a
         key={mi.name}

@@ -13,7 +13,7 @@ const About: NextPage = () => {
           className="max-w-none object-cover object-center lg:max-w-lg"
           src={p1.src}
         ></img>
-        <div className="flex flex-col p-20">
+        <div className="flex flex-col p-8 sm:p-20">
           <div className="pb-12 text-6xl">About</div>
           <section>
             <TextBlock>
