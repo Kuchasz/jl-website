@@ -12,16 +12,25 @@ const menuItems = [
 ];
 
 const Menu = () => (
-  <div className="flex flex-col md:flex-row">
+  <div className="flex flex-col w-full justify-center bg-gray-800 bg-opacity-90 md:flex-row">
     {menuItems.map((mi) => (
       <a
         key={mi.name}
         href={mi.link}
-        className="my-1 mx-1 md:my-4 md:mx-4 cursor-pointer self-center py-1 md:py-4 px-1 md:px-4 text-xl font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-800"
+        className="my-1 mx-1 cursor-pointer self-center py-1 px-1 text-xl font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-500 md:my-4 md:mx-4 md:py-4 md:px-4" 
       >
         {mi.name}
       </a>
     ))}
+  </div>
+);
+
+const Slogan = () => (
+  <div className="flex my-16 flex-col min-h-full flex-grow items-center justify-center leading-normal text-gray-100">
+    <h1 className="text-5xl font-extrabold md:text-[5rem]">
+      John Lecter.
+    </h1>
+    <span>Electronic music producer</span>
   </div>
 );
 
@@ -42,6 +51,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           ></div>
         </div>
         <Menu />
+        <Slogan />
         <Component {...pageProps} />
       </div>
       <footer className="bg-slate-800 py-8 text-center text-sm text-slate-500">

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 const About: NextPage = () => {
   return (
-    <div className="container mt-16 flex flex-col rounded-xl bg-gray-100 p-12 text-gray-800">
+    <div className="container flex flex-col rounded-xl bg-gray-100 p-12 text-gray-800">
       <div className="pb-8 text-5xl">ABOUT</div>
       <section>
         <p className="mb-4">
