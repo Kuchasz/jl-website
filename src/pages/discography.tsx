@@ -48,7 +48,7 @@ const Discography: NextPage = () => (
   <Page title="Discography" img={p2.src}>
     <>
       {discography.map((d) => (
-        <TextBlock>
+        <TextBlock key={d.date}>
           <div className="text-sm">{d.date}</div>
           <div>
             <span>{d.title}</span>
