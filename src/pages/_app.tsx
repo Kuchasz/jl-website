@@ -8,7 +8,7 @@ const menuItems = [
   { name: "about", link: "/about" },
   { name: "discography", link: "/" },
   { name: "music", link: "/" },
-  { name: "videos", link: "/" },
+  { name: "videos", link: "/videos" },
   { name: "contact", link: "/" },
 ];
 

@@ -4,7 +4,6 @@ import p1 from "../../public/photos/PSX_20220527_081517.jpg";
 import { Page } from "../components/page";
 import { TextBlock } from "../components/text-block";
 import { TextDivider } from "../components/text-divider";
-import { TextHeader } from "../components/text-header";
 // import p2 from "../../public/photos/PSX_20220527_081713.jpg";
 // import p3 from "../../public/photos/PSX_20220527_081846.jpg";
 
