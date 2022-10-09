@@ -49,14 +49,16 @@ const Discography: NextPage = () => (
     <>
       {discography.map((d) => (
         <TextBlock key={d.date}>
-          <div className="text-sm">{d.date}</div>
           <div>
-            <span>{d.title}</span>
-            <span className="text-gray-400 ml-2 text-sm">{d.artist}</span>
-          </div>
-          <div>
-            <span>{d.label}</span>
-            <span className="text-gray-400 ml-2 text-sm">{d.genre}</span>
+            <div className="text-sm">{d.date}</div>
+            <div>
+              <span>{d.title}</span>
+              <span className="ml-2 text-sm text-gray-400">{d.artist}</span>
+            </div>
+            <div>
+              <span>{d.label}</span>
+              <span className="ml-2 text-sm text-gray-400">{d.genre}</span>
+            </div>
           </div>
         </TextBlock>
       ))}
