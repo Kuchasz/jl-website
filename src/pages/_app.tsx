@@ -9,7 +9,7 @@ const menuItems = [
   { name: "discography", link: "/" },
   { name: "music", link: "/" },
   { name: "videos", link: "/videos" },
-  { name: "contact", link: "/" },
+  { name: "contact", link: "/contact" },
 ];
 
 const Menu = () => (
