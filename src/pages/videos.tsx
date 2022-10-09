@@ -23,10 +23,10 @@ const Videos: NextPage = () => (
   <Page title="Videos" img={p2.src}>
     <>
       <section className="flex flex-wrap">
-        <YoutubeVideo url="https://www.youtube.com/embed/watch?v=gDCi0UYxddQ"/>
-        <YoutubeVideo url="https://www.youtube.com/embed/watch?v=55vA7CPuGpg"/>
-        <YoutubeVideo url="https://www.youtube.com/embed/watch?v=gjBbEYgGc0g"/>
-        <YoutubeVideo url="https://www.youtube.com/embed/watch?v=67pVu44FR5M"/>
+        <YoutubeVideo url="https://www.youtube.com/embed/gDCi0UYxddQ"/>
+        <YoutubeVideo url="https://www.youtube.com/embed/55vA7CPuGpg"/>
+        <YoutubeVideo url="https://www.youtube.com/embed/gjBbEYgGc0g"/>
+        <YoutubeVideo url="https://www.youtube.com/embed/67pVu44FR5M"/>
       </section>
     </>
   </Page>
