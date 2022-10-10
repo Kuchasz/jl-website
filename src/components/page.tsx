@@ -16,7 +16,7 @@ export const Page = ({
           className="max-w-none object-cover object-center lg:max-w-lg"
           src={img}
         ></img>
-        <div className="flex flex-col p-8 sm:p-20">
+        <div className="flex flex-col p-8 sm:p-20 w-full">
           <TextHeader>{title}</TextHeader>
           {children}
         </div>
