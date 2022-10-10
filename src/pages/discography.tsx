@@ -8,39 +8,66 @@ import { TextBlock } from "../components/text-block";
 
 const discography = [
   {
-    title: "Triangle EP",
-    artist: "John Lecter",
-    label: "STIG Rec",
-    genre: "Organic House",
-    date: "25.09.2022",
-  },
-  {
-    title: "Storm Is Coming Original Mix",
-    artist: "John Lecter",
-    label: "STIG",
-    genre: "Melodic House & Techno",
-    date: "2022-03-08",
-  },
-  {
-    title: "Defragmentation album",
-    artist: "John Lecter",
-    label: "STIG",
-    genre: "Melodic House&Techno",
-    date: "2022-05-08",
+    title: "After Earth EP",
+    songs: ["After Earth", "Clouds", "Storm is comin"],
+    date: new Date().toDateString(),
+    company: "STIG RECORDS",
   },
   {
     title: "Universe EP",
-    artist: "John Lecter",
-    label: "STIG",
-    genre: "Melodic House&Techno",
-    date: "2022-04-22",
+    songs: ["Baryogenesis", "Black Hole"],
+    date: new Date().toDateString(),
+    company: "STIG RECORDS",
   },
   {
     title: "Monday Sunrise EP",
-    artist: "John Lecter",
-    label: "STIG",
-    genre: "Melodic House&Techno",
-    date: "2022-04-04",
+    songs: ["Monday Sunrise", "Her Emotions"],
+    date: new Date().toDateString(),
+    company: "STIG RECORDS",
+  },
+  {
+    title: "Defragmentations",
+    songs: [
+      "4_48",
+      "Deamon",
+      "Defence",
+      "Faith",
+      "Freedom",
+      "Piece of Luck",
+      "Uranium",
+    ],
+    date: new Date().toDateString(),
+    company: "STIG RECORDS",
+  },
+  {
+    title: "Midnight&Photon",
+    songs: ["Midnight", "Photon"],
+    date: new Date().toDateString(),
+    company: "",
+  },
+  {
+    title: "Trangiel",
+    songs: ["Cat", "Move"],
+    date: new Date().toDateString(),
+    company: "STIG RECORDS",
+  },
+  {
+    title: "Rejection",
+    songs: ["Ando", "Project one"],
+    date: new Date().toDateString(),
+    company: "ORGNC RECORDS",
+  },
+  {
+    title: "Abort",
+    songs: ["Abort"],
+    date: new Date().toDateString(),
+    company: "1980 RECORDS",
+  },
+  {
+    title: "Feel the ground",
+    songs: ["Blind", "Road to Sky", "Nocyceptor"],
+    date: new Date().toDateString(),
+    company: "OXYTECH RECORDS",
   },
 ];
 
@@ -50,15 +77,9 @@ const Discography: NextPage = () => (
       {discography.map((d) => (
         <TextBlock key={d.date}>
           <div>
-            <div className="text-sm">{d.date}</div>
-            <div>
-              <span>{d.title}</span>
-              <span className="ml-2 text-sm text-gray-400">{d.artist}</span>
-            </div>
-            <div>
-              <span>{d.label}</span>
-              <span className="ml-2 text-sm text-gray-400">{d.genre}</span>
-            </div>
+            <div className="text-xs">{d.date}</div>
+            <div className="text-xl">{d.title}</div>
+            {d.songs.map(s => <div key={s}>{s}</div>)}
           </div>
         </TextBlock>
       ))}
