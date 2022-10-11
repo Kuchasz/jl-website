@@ -51,7 +51,7 @@ const Menu = () => (
         <a
           key={mi.name}
           href={mi.link}
-          className="my-1 mx-1 cursor-pointer self-center py-1 px-1 text-xl font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-500 md:my-4 md:mx-4 md:py-4 md:px-4"
+          className="my-1 mx-1 cursor-pointer self-center py-1 px-1 text-lg font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-500 md:my-3 md:mx-4 md:py-3 md:px-4"
         >
           {mi.name}
         </a>
@@ -79,9 +79,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       </Head>
       <div className="flex min-h-screen w-full flex-col items-center">
         <div className="absolute -z-10 min-h-full w-full overflow-hidden">
-          <div className="absolute z-10 min-h-screen w-full bg-slate-800 opacity-90"></div>
+          <div className="absolute z-10 min-h-full w-full bg-slate-800 opacity-90"></div>
           <div
-            className={`min-h-screen w-full ${
+            className={`absolute min-h-full w-full ${
               router.asPath === "/" ? "animate-fly-in-out" : ""
             } bg-cover bg-center blur-sm`}
             style={{ backgroundImage: `url(${bg.src})` }}
