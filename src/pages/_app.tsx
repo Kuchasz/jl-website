@@ -45,7 +45,7 @@ const SubMenu = () => (
 );
 
 const Menu = () => (
-  <div className="flex w-full flex-col bg-gray-800 bg-opacity-90">
+  <div className="flex w-full flex-col bg-opacity-90">
     <div className="flex w-full flex-row flex-wrap justify-center">
       {menuItems.map((mi) => (
         <a
@@ -79,7 +79,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       </Head>
       <div className="flex min-h-screen w-full flex-col items-center">
         <div className="absolute -z-10 min-h-full w-full overflow-hidden">
-          <div className="absolute z-10 min-h-full w-full bg-slate-800 opacity-90"></div>
+          <div className="absolute z-10 min-h-full w-full bg-slate-800 opacity-60"></div>
           <div
             className={`absolute min-h-full w-full ${
               router.asPath === "/" ? "animate-fly-in-out" : ""

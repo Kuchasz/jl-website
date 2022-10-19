@@ -50,16 +50,38 @@ const discography = [
   { title: "Lemon Original Mix", date: "2010-08-26" },
 ];
 
+const groupedDiscography = [
+  discography.filter((_, index) => index % 2 === 0),
+  discography.filter((_, index) => index % 2 === 1),
+] as const;
+
 const Discography: NextPage = () => (
   <Page title="Discography" img={p2.src}>
-    <>
-      {discography.map((d) => (
+    <div className="grid grid-cols-2">
+      <div>
+        {groupedDiscography[0].map((d) => (
+          <div className="my-2" key={d.date}>
+            <div className="text-xs">{d.date}</div>
+            <div className="text-base">{d.title}</div>
+          </div>
+        ))}
+      </div>
+      <div>
+        {groupedDiscography[1].map((d) => (
+          <div className="my-2" key={d.date}>
+            <div className="text-xs">{d.date}</div>
+            <div className="text-base">{d.title}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* {discography.map((d) => (
         <div className="my-2" key={d.date}>
           <div className="text-xs">{d.date}</div>
           <div className="text-xl">{d.title}</div>
         </div>
-      ))}
-    </>
+      ))} */}
   </Page>
 );
 
