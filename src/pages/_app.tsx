@@ -15,7 +15,10 @@ const menuItems = [
 const SubMenu = () => (
   <div className="my-16 flex w-full items-center justify-center">
     <a href="https://protun.es/stig239">
-      <svg className="mx-4 h-7 w-7 rounded-full bg-white p-1" viewBox="0 0 24 24">
+      <svg
+        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
+        viewBox="0 0 24 24"
+      >
         <path
           fill="black"
           d="M12,3A3,3 0 0,0 9,6H15A3,3 0 0,0 12,3M19,6A2,2 0 0,1 21,8V20A2,2 0 0,1 19,22H5C3.89,22 3,21.1 3,20V8C3,6.89 3.89,6 5,6H7A5,5 0 0,1 12,1A5,5 0 0,1 17,6H19M9,19L16.5,14L9,10V19Z"
@@ -24,7 +27,7 @@ const SubMenu = () => (
     </a>
     <a href="https://open.spotify.com/artist/4dAzbhtfVKyJbM5Qa9zUQj">
       <svg
-        className="mx-4 h-7 w-7 rounded-full bg-white p-1"
+        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
         viewBox="0 0 24 24"
       >
         <path
@@ -34,10 +37,35 @@ const SubMenu = () => (
       </svg>
     </a>
     <a href="https://www.youtube.com/c/JohnLecter">
-      <svg className="mx-4 h-7 w-7 rounded-full bg-white p-1" viewBox="0 0 24 24">
+      <svg
+        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
+        viewBox="0 0 24 24"
+      >
         <path
           fill="black"
           d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"
+        />
+      </svg>
+    </a>
+    <a href="https://soundcloud.com/john-lecter">
+      <svg
+        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M11.56,8.87V17H20.32V17C22.17,16.87 23,15.73 23,14.33C23,12.85 21.88,11.66 20.38,11.66C20,11.66 19.68,11.74 19.35,11.88C19.11,9.54 17.12,7.71 14.67,7.71C13.5,7.71 12.39,8.15 11.56,8.87M10.68,9.89C10.38,9.71 10.06,9.57 9.71,9.5V17H11.1V9.34C10.95,9.5 10.81,9.7 10.68,9.89M8.33,9.35V17H9.25V9.38C9.06,9.35 8.87,9.34 8.67,9.34C8.55,9.34 8.44,9.34 8.33,9.35M6.5,10V17H7.41V9.54C7.08,9.65 6.77,9.81 6.5,10M4.83,12.5C4.77,12.5 4.71,12.44 4.64,12.41V17H5.56V10.86C5.19,11.34 4.94,11.91 4.83,12.5M2.79,12.22V16.91C3,16.97 3.24,17 3.5,17H3.72V12.14C3.64,12.13 3.56,12.12 3.5,12.12C3.24,12.12 3,12.16 2.79,12.22M1,14.56C1,15.31 1.34,15.97 1.87,16.42V12.71C1.34,13.15 1,13.82 1,14.56Z"
+        />
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/johnlecterr/">
+      <svg
+        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"
         />
       </svg>
     </a>
@@ -51,7 +79,7 @@ const Menu = () => (
         <a
           key={mi.name}
           href={mi.link}
-          className="my-1 mx-1 cursor-pointer self-center py-1 px-1 text-lg font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-500 md:my-3 md:mx-4 md:py-3 md:px-4"
+          className="my-1 mx-1 cursor-pointer self-center py-1 px-1 md:text-lg font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-500 md:my-3 md:mx-4 md:mx-4 md:py-3 md:px-4"
         >
           {mi.name}
         </a>
