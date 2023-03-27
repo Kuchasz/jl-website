@@ -7,7 +7,7 @@ import p2 from "../../public/photos/PSX_20220527_080900.jpg";
 import { TextBlock } from "../components/text-block";
 
 const discography = [
-  { title: "It's not a crystal (Original mix)", date: "22.05.2023" },
+  { title: "It's not a crystal (Original mix) STIG Record", date: "22.05.2023" },
   { title: "Psycho (Original mix) singiel STIG Records", date: "24.04.2023" },
   { title: "Momerandum (Original mix) Singiel Musica Gurmet", date: "20.02.2023" },
   { title: "Triangle EP", date: "25-09-2022" },
