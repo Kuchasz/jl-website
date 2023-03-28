@@ -10,8 +10,8 @@ export const Page = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="container mb-8 flex flex-col">
-      <div className="flex flex-col overflow-clip rounded-xl bg-gray-100 text-gray-800 lg:flex-row">
+    <div className="container my-8 flex flex-col">
+      <div className="flex flex-col overflow-clip rounded-xl shadow-lg bg-gray-100 text-gray-800 lg:flex-row">
         <img
           className="max-w-none object-cover object-center lg:max-w-lg"
           src={img}

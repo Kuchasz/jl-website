@@ -16,7 +16,7 @@ const SubMenu = () => (
   <div className="my-16 flex w-full items-center justify-center">
     <a href="https://protun.es/stig239">
       <svg
-        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
+        className="mx-4 h-8 w-8 rounded-full bg-white p-1 md:mx-6"
         viewBox="0 0 24 24"
       >
         <path
@@ -27,7 +27,7 @@ const SubMenu = () => (
     </a>
     <a href="https://open.spotify.com/artist/4dAzbhtfVKyJbM5Qa9zUQj">
       <svg
-        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
+        className="mx-4 h-8 w-8 rounded-full bg-white p-1 md:mx-6"
         viewBox="0 0 24 24"
       >
         <path
@@ -38,7 +38,7 @@ const SubMenu = () => (
     </a>
     <a href="https://www.youtube.com/c/JohnLecter">
       <svg
-        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
+        className="mx-4 h-8 w-8 rounded-full bg-white p-1 md:mx-6"
         viewBox="0 0 24 24"
       >
         <path
@@ -49,7 +49,7 @@ const SubMenu = () => (
     </a>
     <a href="https://soundcloud.com/john-lecter">
       <svg
-        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
+        className="mx-4 h-8 w-8 rounded-full bg-white p-1 md:mx-6"
         viewBox="0 0 24 24"
       >
         <path
@@ -60,7 +60,7 @@ const SubMenu = () => (
     </a>
     <a href="https://www.instagram.com/johnlecterr/">
       <svg
-        className="mx-4 md:mx-6 h-8 w-8 rounded-full bg-white p-1"
+        className="mx-4 h-8 w-8 rounded-full bg-white p-1 md:mx-6"
         viewBox="0 0 24 24"
       >
         <path
@@ -73,13 +73,13 @@ const SubMenu = () => (
 );
 
 const Menu = () => (
-  <div className="flex w-full flex-col bg-opacity-90">
+  <div className="flex w-full flex-col bg-gray-800">
     <div className="flex w-full flex-row flex-wrap justify-center">
       {menuItems.map((mi) => (
         <a
           key={mi.name}
           href={mi.link}
-          className="my-1 mx-1 cursor-pointer self-center py-1 px-1 md:text-lg font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:scale-105 hover:text-slate-500 md:my-3 md:mx-4 md:mx-4 md:py-3 md:px-4"
+          className="my-1 mx-1 cursor-pointer self-center py-1 px-1 font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:text-gray-400 md:my-3 md:mx-4 md:mx-4 md:py-3 md:px-4 md:text-lg"
         >
           {mi.name}
         </a>
@@ -89,7 +89,7 @@ const Menu = () => (
 );
 
 const Slogan = () => (
-  <div className="mt-16 flex min-h-full flex-grow flex-col items-center justify-center leading-normal text-gray-100">
+  <div className="mt-16 flex flex-grow flex-col items-center self-stretch justify-center leading-normal text-gray-100">
     <h1 className="text-5xl font-extrabold md:text-[5rem]">John Lecter.</h1>
     <span>Electronic music producer</span>
   </div>
@@ -105,19 +105,21 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <meta name="description" content="John Lecter's personal website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex min-h-screen w-full flex-col items-center">
-        <div className="absolute -z-10 min-h-full w-full overflow-hidden">
-          <div className="absolute z-10 min-h-full w-full bg-slate-800 opacity-60"></div>
-          <div
-            className={`absolute min-h-full w-full ${
-              router.asPath === "/" ? "animate-fly-in-out" : ""
-            } bg-cover bg-center blur-sm`}
-            style={{ backgroundImage: `url(${bg.src})` }}
-          ></div>
-        </div>
+      <div className="flex flex-grow w-full flex-col items-center">
         <Menu />
-        <Slogan />
-        <SubMenu />
+        <div className="flex-grow flex flex-col justify-center items-stretch relative w-full overflow-hidden">
+          <div className="absolute h-full -z-10 w-full overflow-hidden">
+            <div className="absolute h-full z-10 w-full bg-slate-800 opacity-60"></div>
+            <div
+              className={`absolute h-full w-full ${
+                router.asPath === "/" ? "animate-fly-in-out" : ""
+              } bg-cover bg-center `}
+              style={{ backgroundImage: `url(${bg.src})` }}
+            ></div>
+          </div>
+          <Slogan />
+          <SubMenu />
+        </div>
         <Component {...pageProps} />
       </div>
       <footer className="bg-gray-800 py-8 text-center text-sm text-slate-500">
