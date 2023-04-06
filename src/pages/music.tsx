@@ -2,7 +2,7 @@ import { Page } from "../components/page";
 import p2 from "../../public/photos/PSX_20220527_081713.jpg";
 
 const Music = () => (
-  <Page title="Music" img={p2.src}>
+  <Page title="Music" img={p2}>
     <iframe
       style={{ borderRadius: "12px" }}
       className="w-full"
