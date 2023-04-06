@@ -1,7 +1,6 @@
 import { Page } from "../components/page";
 import p2 from "../../public/photos/PSX_20220527_080900.jpg";
-import { DiscographyEntryOrderByInput, getSdk } from "../gql";
-import { GraphQLClient } from "graphql-request";
+import { DiscographyEntryOrderByInput } from "../gql";
 import { api } from "../api";
 
 const Discography = ({
@@ -15,7 +14,7 @@ const Discography = ({
   ] as const;
 
   return (
-    <Page title="Discography" img={p2.src}>
+    <Page title="Discography" img={p2}>
       <div className="grid grid-cols-2">
         <div>
           {groupedDiscography[0].map((d) => (

@@ -20,7 +20,7 @@ const YoutubeVideo = ({ url }: { url: string }) => (
 type Video = { youtubeUrl: string };
 
 const Videos: NextPage<{ videos: Video[] }> = ({ videos }) => (
-  <Page title="Videos" img={p2.src}>
+  <Page title="Videos" img={p2}>
     <>
       <section className="flex flex-wrap">
         {videos.map((v) => (
