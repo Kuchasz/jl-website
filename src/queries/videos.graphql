@@ -1,0 +1,9 @@
+query videos($orderBy: VideoOrderByInput) {
+  videos(orderBy: $orderBy, first: 1000) {
+    ...ListVideo
+  }
+}
+
+fragment ListVideo on Video {
+  youtubeUrl
+}

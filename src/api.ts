@@ -1,5 +1,5 @@
-import { request } from "graphql-request";
+import { GraphQLClient } from "graphql-request";
+import { getSdk } from "./gql";
+import { env } from "./env/server.mjs";
 
-const endpoint = 'https://eu-central-1-shared-euc1-02.cdn.hygraph.com/content/clfsoexj9267j01t7d0p16yar/master';
-
-export const query = (q: string, vars?: {[key: string]: any}) => request(endpoint, q, vars);
+export const api = getSdk(new GraphQLClient(env.API_URL));

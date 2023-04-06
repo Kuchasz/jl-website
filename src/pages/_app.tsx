@@ -3,6 +3,7 @@ import Head from "next/head";
 import type { AppType } from "next/dist/shared/lib/utils";
 import bg from "../../public/bg.jpg";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const menuItems = [
   { name: "about", link: "/about" },
@@ -76,20 +77,18 @@ const Menu = () => (
   <div className="flex w-full flex-col bg-gray-800">
     <div className="flex w-full flex-row flex-wrap justify-center">
       {menuItems.map((mi) => (
-        <a
-          key={mi.name}
-          href={mi.link}
-          className="my-1 mx-1 cursor-pointer self-center py-1 px-1 font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:text-gray-400 md:my-3 md:mx-4 md:mx-4 md:py-3 md:px-4 md:text-lg"
-        >
-          {mi.name}
-        </a>
+        <Link key={mi.name} href={mi.link}>
+          <span className="my-1 mx-1 cursor-pointer self-center py-1 px-1 font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:text-gray-400 md:my-3 md:mx-4 md:mx-4 md:py-3 md:px-4 md:text-lg">
+            {mi.name}
+          </span>
+        </Link>
       ))}
     </div>
   </div>
 );
 
 const Slogan = () => (
-  <div className="mt-16 flex flex-grow flex-col items-center self-stretch justify-center leading-normal text-gray-100">
+  <div className="mt-16 flex flex-grow flex-col items-center justify-center self-stretch leading-normal text-gray-100">
     <h1 className="text-5xl font-extrabold md:text-[5rem]">John Lecter.</h1>
     <span>Electronic music producer</span>
   </div>
@@ -105,11 +104,11 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <meta name="description" content="John Lecter's personal website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-grow w-full flex-col items-center">
+      <div className="flex w-full flex-grow flex-col items-center">
         <Menu />
-        <div className="flex-grow flex flex-col justify-center items-stretch relative w-full overflow-hidden">
-          <div className="absolute h-full -z-10 w-full overflow-hidden">
-            <div className="absolute h-full z-10 w-full bg-slate-800 opacity-60"></div>
+        <div className="relative flex w-full flex-grow flex-col items-stretch justify-center overflow-hidden">
+          <div className="absolute -z-10 h-full w-full overflow-hidden">
+            <div className="absolute z-10 h-full w-full bg-slate-800 opacity-60"></div>
             <div
               className={`absolute h-full w-full ${
                 router.asPath === "/" ? "animate-fly-in-out" : ""

@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import { Page } from "../components/page";
 import p2 from "../../public/photos/PSX_20220527_081846.jpg";
-import { query } from "../api";
-import { gql } from "graphql-request";
+import { api } from "../api";
+import { VideoOrderByInput } from "../gql";
 
 const YoutubeVideo = ({ url }: { url: string }) => (
   <iframe
@@ -32,19 +32,13 @@ const Videos: NextPage<{ videos: Video[] }> = ({ videos }) => (
 );
 
 export async function getStaticProps() {
-  const q = gql`
-    query Videos {
-      videos(first: 1000, orderBy: createdAt_DESC) {
-        youtubeUrl
-      }
-    }
-  `;
-
-  const data = (await query(q)) as any;
+  const { videos } = await api.videos({
+    orderBy: VideoOrderByInput.CreatedAtDesc,
+  });
 
   return {
     props: {
-      videos: data.videos,
+      videos: videos,
     },
     revalidate: 10,
   };

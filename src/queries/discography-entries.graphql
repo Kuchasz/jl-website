@@ -1,0 +1,10 @@
+query discographyEntries($orderBy: DiscographyEntryOrderByInput) {
+  discographyEntries(orderBy: $orderBy, first: 1000) {
+    ...ListDictionaryEntry
+  }
+}
+
+fragment ListDictionaryEntry on DiscographyEntry {
+    title
+    releaseDate
+}
