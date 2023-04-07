@@ -34,6 +34,7 @@ const Videos: NextPage<{ videos: Video[] }> = ({ videos }) => (
 export async function getStaticProps() {
   const { videos } = await api.videos({
     orderBy: VideoOrderByInput.CreatedAtDesc,
+    first: 1000
   });
 
   return {

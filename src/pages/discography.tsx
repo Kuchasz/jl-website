@@ -16,18 +16,18 @@ const Discography = ({
   return (
     <Page title="Discography" img={p2}>
       <div className="grid grid-cols-2">
-        <div>
+        <div className="mx-4">
           {groupedDiscography[0].map((d) => (
             <div className="my-2" key={d.releaseDate + d.title}>
-              <div className="text-xs">{d.releaseDate}</div>
+              <div className="text-gray-500 text-[0.6rem]">{d.releaseDate}</div>
               <div className="text-base">{d.title}</div>
             </div>
           ))}
         </div>
-        <div>
+        <div className="mx-4">
           {groupedDiscography[1].map((d) => (
             <div className="my-2" key={d.releaseDate + d.title}>
-              <div className="text-xs">{d.releaseDate}</div>
+              <div className="text-gray-500 text-[0.6rem]">{d.releaseDate}</div>
               <div className="text-base">{d.title}</div>
             </div>
           ))}
