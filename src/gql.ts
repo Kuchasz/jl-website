@@ -4850,7 +4850,7 @@ export type AboutQueryVariables = Exact<{
 }>;
 
 
-export type AboutQuery = { __typename?: 'Query', siteContents: Array<{ __typename?: 'SiteContent', content: { __typename?: 'RichText', html: string } }> };
+export type AboutQuery = { __typename?: 'Query', siteContents: Array<{ __typename?: 'SiteContent', content: { __typename?: 'RichText', html: string, text: string } }> };
 
 export type DiscographyEntriesQueryVariables = Exact<{
   orderBy?: InputMaybe<DiscographyEntryOrderByInput>;
@@ -4887,6 +4887,7 @@ export const AboutDocument = gql`
   siteContents(where: {type: "about", lang: $language}, first: 1) {
     content {
       html
+      text
     }
   }
 }

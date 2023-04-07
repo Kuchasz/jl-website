@@ -1,7 +1,7 @@
 import { Page } from "../components/page";
 import Image from "next/image";
 import p1 from "../../public/photos/PSX_20220527_081713.jpg";
-import { DiscographyEntryOrderByInput, VideoOrderByInput } from "../gql";
+import { DiscographyEntryOrderByInput, Language, VideoOrderByInput } from "../gql";
 import { api } from "../api";
 import Link from "next/link";
 import { TextBlock } from "../components/text-block";
@@ -19,7 +19,7 @@ const getThumbByVideoUrl = (videoUrl: string) => {
 const Home = ({
   bioSneak,
   discography,
-  videos,
+  videos
 }: {
   bioSneak: string;
   discography: { title: string; releaseDate: string }[];
@@ -113,7 +113,7 @@ const Home = ({
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: { locale: string }) {
   const { discographyEntries } = await api.discographyEntries({
     orderBy: DiscographyEntryOrderByInput.ReleaseDateDesc,
   });
@@ -123,12 +123,17 @@ export async function getStaticProps() {
     first: 4,
   });
 
+  const {
+    siteContents: [siteContent],
+  } = await api.about({ language: locale as Language });
+  const {
+    content: { text: bio },
+  } = siteContent!;
   return {
     props: {
-      bioSneak:
-        "Prywatnie, Krzysztof Żebro. Na co dzień pracujący w obszarze kultury, sportu oraz mediów. Swoją przygodę z muzyką elektroniczną zaczął 14 lat temu w małym klubie w Małopolsce. Szlifując swoja technikę oraz styl, szybko został zauważony przez większe kluby.",
+      bioSneak: bio.split("\\n")[0],
       discography: discographyEntries,
-      videos,
+      videos
     },
     revalidate: 10,
   };

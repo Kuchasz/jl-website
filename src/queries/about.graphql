@@ -2,6 +2,7 @@ query about($language: Language) {
   siteContents(where: { type: "about", lang: $language }, first: 1) {
     content {
       html
+      text
     }
   }
 }
