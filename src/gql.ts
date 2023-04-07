@@ -4863,6 +4863,7 @@ export type ListDictionaryEntryFragment = { __typename?: 'DiscographyEntry', tit
 
 export type VideosQueryVariables = Exact<{
   orderBy?: InputMaybe<VideoOrderByInput>;
+  first?: InputMaybe<Scalars['Int']>;
 }>;
 
 
@@ -4898,8 +4899,8 @@ export const DiscographyEntriesDocument = gql`
 }
     ${ListDictionaryEntryFragmentDoc}`;
 export const VideosDocument = gql`
-    query videos($orderBy: VideoOrderByInput) {
-  videos(orderBy: $orderBy, first: 1000) {
+    query videos($orderBy: VideoOrderByInput, $first: Int) {
+  videos(orderBy: $orderBy, first: $first) {
     ...ListVideo
   }
 }

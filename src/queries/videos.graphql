@@ -1,5 +1,5 @@
-query videos($orderBy: VideoOrderByInput) {
-  videos(orderBy: $orderBy, first: 1000) {
+query videos($orderBy: VideoOrderByInput, $first: Int) {
+  videos(orderBy: $orderBy, first: $first) {
     ...ListVideo
   }
 }
