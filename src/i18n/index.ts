@@ -1,8 +1,16 @@
-import LocalizedStrings from 'react-localization';
 import { pl } from './pl';
+import { en } from './en';
+import { useRouter } from 'next/router';
 
-type Localizations = typeof pl;
+const languages = {
+    pl, en
+} as const;
 
-export const strings = new LocalizedStrings<Localizations>({
-    pl,
-});
+type Languages = keyof typeof languages;
+
+export const translations = (lang: Languages) => languages[lang];
+
+export const useTranslations = () => {
+    const { locale } = useRouter();
+    return translations(locale as Languages);
+}

@@ -2,6 +2,7 @@ import { Page } from "../components/page";
 import p2 from "../../public/photos/PSX_20220527_080900.jpg";
 import { DiscographyEntryOrderByInput } from "../gql";
 import { api } from "../api";
+import { useTranslations } from "../i18n";
 
 const Discography = ({
   discography,
@@ -13,8 +14,10 @@ const Discography = ({
     discography.filter((_, index) => index % 2 === 1),
   ] as const;
 
+  const translations = useTranslations();
+
   return (
-    <Page title="Discography" img={p2}>
+    <Page title={translations.discography.header} img={p2}>
       <div className="grid grid-cols-2">
         <div className="mx-4">
           {groupedDiscography[0].map((d) => (

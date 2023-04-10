@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
 import { Page } from "../../components/page";
 import p2 from "../../../public/photos/PSX_20220527_081846.jpg";
-import { api } from "../../api";
-import { VideoOrderByInput } from "../../gql";
 import { useRouter } from "next/router";
+import { useTranslations } from "../../i18n";
 
 const YoutubeVideo = ({ url }: { url: string }) => (
   <iframe
@@ -18,32 +17,15 @@ const YoutubeVideo = ({ url }: { url: string }) => (
   ></iframe>
 );
 
-type Video = { youtubeUrl: string };
-
 const Videos = () => {
   const id = useRouter().query.youtubeId! as string;
+  const translations = useTranslations();
 
   return (
-    <Page title="Video" img={p2}>
+    <Page title={translations.videos.header} img={p2}>
       <YoutubeVideo key={id} url={id} />
     </Page>
   );
 };
-
-// export async function getStaticProps(params: any) {
-//   const { videos } = await api.videos({
-//     orderBy: VideoOrderByInput.CreatedAtDesc,
-//     first: 1000,
-//   });
-
-//   console.log(params);
-
-//   return {
-//     props: {
-//       video: videos[0],
-//     },
-//     revalidate: 10,
-//   };
-// }
 
 export default Videos;

@@ -5,5 +5,10 @@ export const pl = {
         music: "muzyka",
         videos: "video",
         contact: "kontakt"
-    }
+    },
+    about: { header: 'o mnie' },
+    discography: { header: "dyskografia" },
+    music: { header: "muzyka" },
+    videos: { header: "video" },
+    contact: { header: "kontakt" }
 };

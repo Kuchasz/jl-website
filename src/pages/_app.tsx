@@ -4,6 +4,7 @@ import type { AppType } from "next/dist/shared/lib/utils";
 import bg from "../../public/bg.jpg";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { translations, useTranslations } from "../i18n";
 
 const menuItems = [
   { name: "about", link: "/about" },
@@ -11,7 +12,7 @@ const menuItems = [
   { name: "music", link: "/music" },
   { name: "videos", link: "/videos" },
   { name: "contact", link: "/contact" },
-];
+] as const;
 
 const SubMenu = () => (
   <div className="my-16 flex w-full items-center justify-center">
@@ -73,19 +74,23 @@ const SubMenu = () => (
   </div>
 );
 
-const Menu = () => (
-  <div className="flex w-full flex-col bg-gray-800">
-    <div className="flex w-full flex-row flex-wrap justify-center">
-      {menuItems.map((mi) => (
-        <Link key={mi.name} href={mi.link}>
-          <span className="my-1 mx-1 cursor-pointer self-center py-1 px-1 font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:text-gray-400 md:my-3 md:mx-4 md:mx-4 md:py-3 md:px-4 md:text-lg">
-            {mi.name}
-          </span>
-        </Link>
-      ))}
+const Menu = () => {
+  const strings = useTranslations();
+
+  return (
+    <div className="flex w-full flex-col bg-gray-800">
+      <div className="flex w-full flex-row flex-wrap justify-center">
+        {menuItems.map((mi) => (
+          <Link key={mi.name} href={mi.link}>
+            <span className="my-1 mx-1 cursor-pointer self-center py-1 px-1 font-semibold uppercase text-gray-100 drop-shadow-sm transition-all hover:text-gray-400 md:my-3 md:mx-4 md:py-3 md:px-4 md:text-lg">
+              {strings.menuOptions[mi.name]}
+            </span>
+          </Link>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Slogan = () => (
   <div className="mt-16 flex flex-grow flex-col items-center justify-center self-stretch leading-normal text-gray-100">

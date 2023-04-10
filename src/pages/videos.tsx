@@ -5,28 +5,32 @@ import { api } from "../api";
 import { VideoOrderByInput } from "../gql";
 import Link from "next/link";
 import { getThumbByVideoUrl, getYoutubeId } from "../yt-helpers";
+import { useTranslations } from "../i18n";
 
 type Video = { youtubeUrl: string };
 
-const Videos: NextPage<{ videos: Video[] }> = ({ videos }) => (
-  <Page title="Videos" img={p2}>
-     <div className="flex justify-center flex-wrap gap-4">
-            {videos.map((v) => (
-              <Link href={`/video/${getYoutubeId(v.youtubeUrl)}`}>
-                <img
-                  className="grayscale brightness-50 hover:brightness-100 hover:grayscale-0 transition-all cursor-pointer max-w-[30rem]"
-                  src={getThumbByVideoUrl(v.youtubeUrl)}
-                ></img>
-              </Link>
-            ))}
-          </div>
-  </Page>
-);
+const Videos: NextPage<{ videos: Video[] }> = ({ videos }) => {
+  const translations = useTranslations();
+  return (
+    <Page title={translations.videos.header} img={p2}>
+      <div className="flex flex-wrap justify-center gap-4">
+        {videos.map((v) => (
+          <Link href={`/video/${getYoutubeId(v.youtubeUrl)}`}>
+            <img
+              className="max-w-[30rem] cursor-pointer brightness-50 grayscale transition-all hover:brightness-100 hover:grayscale-0"
+              src={getThumbByVideoUrl(v.youtubeUrl)}
+            ></img>
+          </Link>
+        ))}
+      </div>
+    </Page>
+  );
+};
 
 export async function getStaticProps() {
   const { videos } = await api.videos({
     orderBy: VideoOrderByInput.CreatedAtDesc,
-    first: 1000
+    first: 1000,
   });
 
   return {
