@@ -93,10 +93,12 @@ const Menu = () => {
 };
 
 const Slogan = () => (
-  <div className="mt-16 flex flex-grow flex-col items-center justify-center self-stretch leading-normal text-gray-100">
-    <h1 className="text-5xl font-extrabold md:text-[5rem]">John Lecter.</h1>
-    <span>Electronic music producer</span>
-  </div>
+  <Link href={"/"}>
+    <div className="mt-16 flex flex-grow cursor-pointer flex-col items-center justify-center leading-normal text-gray-100">
+      <h1 className="text-5xl font-extrabold md:text-[5rem]">John Lecter.</h1>
+      <span>Electronic music producer</span>
+    </div>
+  </Link>
 );
 
 const MyApp: AppType = ({ Component, pageProps }) => {

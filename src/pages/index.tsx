@@ -5,6 +5,7 @@ import { DiscographyEntryOrderByInput, Language, VideoOrderByInput } from "../gq
 import { api } from "../api";
 import Link from "next/link";
 import { getThumbByVideoUrl, getYoutubeId } from "../yt-helpers";
+import { useTranslations } from "../i18n";
 
 const Home = ({
   bioSneak,
@@ -15,6 +16,7 @@ const Home = ({
   discography: { title: string; releaseDate: string }[];
   videos: { youtubeUrl: string }[];
 }) => {
+  const translations = useTranslations();
   return (
     <>
       <Page title="Biography">
@@ -23,7 +25,7 @@ const Home = ({
             <div className="mr-8">{bioSneak}</div>
             <Link href="/about">
               <button className="border-1 mt-4 self-start rounded-md border px-6 py-2 hover:bg-gray-100">
-                Read More
+                {translations.readMore}
               </button>
             </Link>
           </div>
@@ -52,7 +54,7 @@ const Home = ({
           </div>
           <Link href="/discography">
             <button className="border-1 mt-4 rounded-md border px-6 py-2 hover:bg-white">
-              Read More
+              {translations.readMore}
             </button>
           </Link>
         </div>
@@ -72,7 +74,7 @@ const Home = ({
         <div className="flex flex-col items-center">
           <div className="flex gap-x-4">
             {videos.map((v) => (
-              <Link href={`/video/${getYoutubeId(v.youtubeUrl)}`}>
+              <Link key={v.youtubeUrl} href={`/video/${getYoutubeId(v.youtubeUrl)}`}>
                 <img
                   className="grayscale brightness-50 hover:brightness-100 hover:grayscale-0 transition-all cursor-pointer max-w-[15rem]"
                   src={getThumbByVideoUrl(v.youtubeUrl)}

@@ -10,5 +10,6 @@ export const en = {
     discography: { header: "discography" },
     music: { header: "music" },
     videos: { header: "videos" },
-    contact: { header: "contact" }
+    contact: { header: "contact" },
+    readMore: "Read more"
 };

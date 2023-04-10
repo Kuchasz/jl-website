@@ -10,5 +10,6 @@ export const pl = {
     discography: { header: "dyskografia" },
     music: { header: "muzyka" },
     videos: { header: "video" },
-    contact: { header: "kontakt" }
+    contact: { header: "kontakt" },
+    readMore: "Czytaj więcej"
 };
