@@ -3,31 +3,23 @@ import { Page } from "../components/page";
 import p2 from "../../public/photos/PSX_20220527_081846.jpg";
 import { api } from "../api";
 import { VideoOrderByInput } from "../gql";
-
-const YoutubeVideo = ({ url }: { url: string }) => (
-  <iframe
-    className="my-4 w-full bg-red-500"
-    width="300px"
-    height="300px"
-    src={url}
-    title="YouTube video player"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  ></iframe>
-);
+import Link from "next/link";
+import { getThumbByVideoUrl, getYoutubeId } from "../yt-helpers";
 
 type Video = { youtubeUrl: string };
 
 const Videos: NextPage<{ videos: Video[] }> = ({ videos }) => (
   <Page title="Videos" img={p2}>
-    <>
-      <section className="flex flex-wrap">
-        {videos.map((v) => (
-          <YoutubeVideo key={v.youtubeUrl} url={v.youtubeUrl} />
-        ))}
-      </section>
-    </>
+     <div className="flex justify-center flex-wrap gap-4">
+            {videos.map((v) => (
+              <Link href={`/video/${getYoutubeId(v.youtubeUrl)}`}>
+                <img
+                  className="grayscale brightness-50 hover:brightness-100 hover:grayscale-0 transition-all cursor-pointer max-w-[30rem]"
+                  src={getThumbByVideoUrl(v.youtubeUrl)}
+                ></img>
+              </Link>
+            ))}
+          </div>
   </Page>
 );
 

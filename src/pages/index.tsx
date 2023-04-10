@@ -4,17 +4,7 @@ import p1 from "../../public/photos/PSX_20220527_081713.jpg";
 import { DiscographyEntryOrderByInput, Language, VideoOrderByInput } from "../gql";
 import { api } from "../api";
 import Link from "next/link";
-import { TextBlock } from "../components/text-block";
-
-const getYoutubeId = (videoUrl: string) => {
-  return videoUrl.split("/").slice(-1);
-};
-
-const getThumbByVideoUrl = (videoUrl: string) => {
-  const id = videoUrl.split("/").slice(-1);
-
-  return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
-};
+import { getThumbByVideoUrl, getYoutubeId } from "../yt-helpers";
 
 const Home = ({
   bioSneak,
