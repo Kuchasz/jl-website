@@ -19,7 +19,7 @@ const Home = ({
   const translations = useTranslations();
   return (
     <>
-      <Page title="Biography">
+      <Page title={translations.about.header}>
         <div className="grid grid-cols-2">
           <div className="flex flex-col justify-center">
             <div className="mr-8">{bioSneak}</div>
@@ -34,7 +34,7 @@ const Home = ({
           </div>
         </div>
       </Page>
-      <Page classNames="bg-gray-100" title="Discography">
+      <Page classNames="bg-gray-100" title={translations.discography.header}>
         <div className="flex w-full flex-col items-center">
           <div className="relative flex h-64 flex-col flex-wrap gap-x-4 self-stretch overflow-hidden">
             {discography.map((d) => (
@@ -59,7 +59,7 @@ const Home = ({
           </Link>
         </div>
       </Page>
-      <Page title="listen to the music">
+      <Page title={translations.listenMusic}>
         <iframe
           style={{ borderRadius: "12px", maxWidth: "800px" }}
           src="https://open.spotify.com/embed/artist/4dAzbhtfVKyJbM5Qa9zUQj?utm_source=generator"
@@ -70,7 +70,7 @@ const Home = ({
           loading="lazy"
         ></iframe>
       </Page>
-      <Page classNames="bg-gray-800 text-white" title="Videos">
+      <Page classNames="bg-gray-800 text-white" title={translations.videos.header}>
         <div className="flex flex-col items-center">
           <div className="flex gap-x-4">
             {videos.map((v) => (
@@ -84,12 +84,12 @@ const Home = ({
           </div>
           <Link href="/videos">
             <button className="border-1 mt-8 rounded-md border px-6 py-2 hover:bg-gray-700">
-              See More
+              {translations.seeMore}
             </button>
           </Link>
         </div>
       </Page>
-      <Page title="Contact">
+      <Page title={translations.contact.header}>
         <div className="text-center">
           Management & Booking:
           <br />

@@ -11,5 +11,7 @@ export const pl = {
     music: { header: "muzyka" },
     videos: { header: "video" },
     contact: { header: "kontakt" },
-    readMore: "Czytaj więcej"
+    readMore: "Czytaj więcej",
+    seeMore: "Zobacz więcej",
+    listenMusic: "Posłuchaj mojej muzyki"
 };

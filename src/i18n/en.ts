@@ -11,5 +11,7 @@ export const en = {
     music: { header: "music" },
     videos: { header: "videos" },
     contact: { header: "contact" },
-    readMore: "Read more"
+    readMore: "Read more",
+    seeMore: "See more",
+    listenMusic: "Listen to the music"
 };
