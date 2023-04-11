@@ -5,6 +5,7 @@ import bg from "../../public/bg.jpg";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { translations, useTranslations } from "../i18n";
+import classNames from "classnames";
 
 const menuItems = [
   { name: "about", link: "/about" },
@@ -114,7 +115,12 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       </Head>
       <div className="flex w-full flex-grow flex-col items-center">
         <Menu />
-        <div className="relative flex w-full flex-grow flex-col items-stretch justify-center overflow-hidden min-h-[calc(100vh-76px)]">
+        <div
+          className={classNames(
+            "relative flex w-full flex-grow flex-col items-stretch justify-center overflow-hidden",
+            { ["min-h-[calc(100vh-76px)]"]: isMainPage }
+          )}
+        >
           <div className="absolute -z-10 h-full w-full overflow-hidden">
             <div className="absolute z-10 h-full w-full bg-slate-800 opacity-60"></div>
             <div
