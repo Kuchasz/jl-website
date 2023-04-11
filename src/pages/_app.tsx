@@ -103,6 +103,7 @@ const Slogan = () => (
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   const router = useRouter();
+  const isMainPage = router.asPath === "/";
 
   return (
     <>
@@ -113,12 +114,12 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       </Head>
       <div className="flex w-full flex-grow flex-col items-center">
         <Menu />
-        <div className="relative flex w-full flex-grow flex-col items-stretch justify-center overflow-hidden">
+        <div className="relative flex w-full flex-grow flex-col items-stretch justify-center overflow-hidden min-h-[calc(100vh-76px)]">
           <div className="absolute -z-10 h-full w-full overflow-hidden">
             <div className="absolute z-10 h-full w-full bg-slate-800 opacity-60"></div>
             <div
               className={`absolute h-full w-full ${
-                router.asPath === "/" ? "animate-fly-in-out" : ""
+                isMainPage ? "animate-fly-in-out" : ""
               } bg-cover bg-center `}
               style={{ backgroundImage: `url(${bg.src})` }}
             ></div>
