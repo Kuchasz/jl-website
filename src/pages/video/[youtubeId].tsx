@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { Page } from "../../components/page";
 import p2 from "../../../public/photos/PSX_20220527_081846.jpg";
 import { useRouter } from "next/router";

@@ -8,7 +8,7 @@ const Music = () => {
     <Page title={translations.music.header} img={p2}>
       <iframe
         style={{ borderRadius: "12px" }}
-        className="w-full"
+        className="w-full max-w-3xl"
         src="https://open.spotify.com/embed/artist/4dAzbhtfVKyJbM5Qa9zUQj?utm_source=generator"
         width="100%"
         height="380"
