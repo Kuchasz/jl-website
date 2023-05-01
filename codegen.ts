@@ -1,9 +1,11 @@
-
 import type { CodegenConfig } from '@graphql-codegen/cli';
+import { loadEnvConfig } from "@next/env";
+
+loadEnvConfig(process.cwd());
 
 const config: CodegenConfig = {
   overwrite: true,
-  schema: "https://eu-central-1-shared-euc1-02.cdn.hygraph.com/content/clfsoexj9267j01t7d0p16yar/master",
+  schema: process.env.API_URL,
   documents: ["src/queries/*.graphql"],
   generates: {
     "src/gql.ts": {

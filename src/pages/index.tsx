@@ -79,7 +79,7 @@ const Home = ({
                   className="grayscale brightness-50 hover:brightness-100 hover:grayscale-0 transition-all cursor-pointer max-w-[15rem]"
                   src={getThumbByVideoUrl(v.youtubeUrl)}
                 ></img>
-              </Link>
+              </Link> 
             ))}
           </div>
           <Link href="/videos">
@@ -118,9 +118,11 @@ export async function getStaticProps({ locale }: { locale: string }) {
   const {
     siteContents: [siteContent],
   } = await api.about({ language: locale as Language });
+
   const {
     content: { text: bio },
   } = siteContent!;
+  
   return {
     props: {
       bioSneak: bio.split("\\n")[0],
