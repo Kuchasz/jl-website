@@ -15,7 +15,7 @@ const Videos: NextPage<{ videos: Video[] }> = ({ videos }) => {
     <Page title={translations.videos.header} img={p2}>
       <div className="flex flex-wrap justify-center gap-4">
         {videos.map((v) => (
-          <Link href={`/video/${getYoutubeId(v.youtubeUrl)}`}>
+          <Link key={v.youtubeUrl} href={`/video/${getYoutubeId(v.youtubeUrl)}`}>
             <img
               className="max-w-[30rem] cursor-pointer brightness-50 grayscale transition-all hover:brightness-100 hover:grayscale-0"
               src={getThumbByVideoUrl(v.youtubeUrl)}
