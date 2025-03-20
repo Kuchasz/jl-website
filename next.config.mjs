@@ -19,4 +19,12 @@ export default defineNextConfig({
     locales: ["en", "pl"],
     defaultLocale: "en",
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.graphassets.com',
+      },
+    ],
+  },
 });
